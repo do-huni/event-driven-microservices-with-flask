@@ -1,4 +1,6 @@
-# Healers
+# Flask MSA 시드
+
+flask 프레임워크가 DDD기반의 개발을 하기에 생산성이나 성능면에서 좋지 않다고 생각되어 fastAPI로 이전합니다.
 
 ## 1. 서비스 개요
 
@@ -77,10 +79,10 @@ flowchart TD
 
     %% 게이트웨이가 각 서비스로 라우팅
     subgraph APIGateway["API Gateway"]
-        GateAwayServer
-        GateAwayServer -->|Request| UserService["User Service"]
-        GateAwayServer -->|Request| ChatService["Chat Service"]
-        GateAwayServer -->|Request| PaymentService["Payment Service"]
+        GatewayServer
+        GatewayServer -->|Request| UserService["User Service"]
+        GatewayServer -->|Request| ChatService["Chat Service"]
+        GatewayServer -->|Request| PaymentService["Payment Service"]
     end
 
     %% EventBus (Kafka)
