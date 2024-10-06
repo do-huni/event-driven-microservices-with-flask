@@ -17,6 +17,7 @@ logging.basicConfig(level=logging.INFO,
 
 def create_app():
     flask_app = Flask(__name__)
+    # flask_app.register_blueprint(Container.team_controller().routes(), url_prefix='/teams')
     flask_app.register_error_handler(Exception, handle_exception)
     api = Api(flask_app, version='1.0', title='My API', description='A simple Flask-RESTX API')
 

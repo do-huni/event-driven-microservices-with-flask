@@ -6,7 +6,7 @@ services:
     container_name: api
     platform: linux/amd64
     depends_on:
-      - postgres # Mongo 대신 Postgres에 의존
+      - postgres
       - kafka
       - kafka-ui
     environment:
@@ -26,14 +26,14 @@ services:
       - python_ddd
 
   postgres:
-    image: postgres:latest # Postgres 이미지 사용
+    image: postgres:latest
     container_name: postgres
     environment:
-      POSTGRES_USER: admin # PostgreSQL 사용자 설정
-      POSTGRES_PASSWORD: admin # PostgreSQL 비밀번호 설정
-      POSTGRES_DB: mydb # 초기화할 데이터베이스 이름
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: mydb
     volumes:
-      - ./data:/var/lib/postgresql/data # 데이터 볼륨 설정
+      - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:

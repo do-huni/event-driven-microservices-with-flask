@@ -136,4 +136,4 @@ dmypy.json
 .pyre/
 
 # pg data
-.data/
+data/
