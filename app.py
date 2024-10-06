@@ -24,9 +24,9 @@ def create_app():
     return flask_app
 
 
-def start_consumers():
+async def start_consumers():
     bus = Container.event_bus()
-    bus.listen()
+    await bus.listen()
 
 if __name__ == '__main__':
     t1 = threading.Thread(target=start_consumers)
